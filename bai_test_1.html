@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p id="demo1"></p>
+
+    <p id="demo2"></p>
+
+    <script>
+
+        function isPrimeNumber(n) {
+            if (n < 2) {
+                return false;
+            }
+            // check so nguyen to khi n >= 2
+            squareRoot = Math.sqrt(n);
+            for (let i = 2; i <= squareRoot; i++) {
+                if (n % i == 0) {
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        const a = [5, 3, 2, 8, 9, 7, 1];
+
+        document.getElementById("demo1").innerHTML = a;
+
+        // a.sort(function(a, b){return a - b});
+        for (let i = 0; i < a.length - 1; i++) {
+            
+            for (let j = i + 1; j < a.length; j++) {
+                
+                if (a[j] < a[i]) {
+                    let tg = a[i];
+                    a[i] = a[j];
+                    a[j] = tg;
+                }
+            }
+
+        }
+        var b = [];
+        for (let i = 0; i < a.length; i++) {
+            
+            if (isPrimeNumber(a[i])) b.push(a[i]);
+
+        }
+        document.getElementById("demo2").innerHTML =b;
+
+    </script>
+</body>
+
+</html>
